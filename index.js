@@ -99,7 +99,7 @@ fastify.get('/msg', async (request, reply) => {
 fastify.get('/hsh', async (request, reply) => {
 	return getHSH();
 });
-fastify.listen({ port: 3000 }, () => {
+fastify.listen({ process.env.PORT || 3000 }, () => {
 	console.log('Server running at http://localhost:3000');
 });
 
