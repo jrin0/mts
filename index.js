@@ -3,6 +3,7 @@ const fastify = require('fastify')();
 const { fetch, request } = require('undici');
 const { RSI, BollingerBands } = require('technicalindicators');
 const moment = require('moment-timezone');
+const PORT = process.env.PORT || 3000;
 
 async function getData(from, to) {
 	// const link = `https://tradingview.mtsgold.co.th/mgb/history?symbol=GLD965&resolution=15&from=1747401348&to=1747410348&countback=2&currencyCode=THB`
@@ -99,7 +100,7 @@ fastify.get('/msg', async (request, reply) => {
 fastify.get('/hsh', async (request, reply) => {
 	return getHSH();
 });
-fastify.listen({ port: process.env.PORT || 3000 }, () => {
+fastify.listen({ port: PORT, host: '0.0.0.0'} , () => {
 	console.log('Server running at http://localhost:3000');
 });
 
