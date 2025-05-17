@@ -1,11 +1,14 @@
 services:
   - type: web
-    name: my-nodejs-app
-    env: node
+    name: indicator-alert
+    runtime: node
+    repo: https://github.com/jrin0/mts
     plan: free
-    branch: main
+    envVars:
+  - key: NODE_ENV
+    sync: false
+    region: oregon
     buildCommand: npm install
     startCommand: node index.js
-    envVars:
-      - key: NODE_ENV
-        value: production
+    autoDeployTrigger: commit
+version: "1"
