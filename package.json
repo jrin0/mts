@@ -1,0 +1,21 @@
+{
+  "name": "mts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "undici": "^7.9.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "fastify": "^5.3.3",
+    "moment-timezone": "^0.5.48",
+    "technicalindicators": "^3.1.0"
+  }
+}
